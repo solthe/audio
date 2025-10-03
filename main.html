@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Button Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Play Audio</h1>
+
+  <button onclick="playAudio('audio1.mp3')">Play Audio 1</button>
+  <button onclick="playAudio('audio2.mp3')">Play Audio 2</button>
+  <button onclick="playAudio('audio3.mp3')">Play Audio 3</button>
+  <button onclick="playAudio('audio4.mp3')">Play Audio 4</button>
+  <button onclick="playAudio('audio5.mp3')">Play Audio 5</button>
+
+  <script>
+    function playAudio(file) {
+      let audio = new Audio(file);
+      audio.play();
+    }
+  </script>
+</body>
+</html>
