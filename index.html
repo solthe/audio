@@ -33,7 +33,7 @@
   </style>
 </head>
 <body>
-  <h1>play audio</h1>
+  <h1>Play Audio</h1>
 
   <button onclick="playAudio('audio1.mp3')">Play Audio 1</button>
   <button onclick="playAudio('audio2.mp3')">Play Audio 2</button>
@@ -42,9 +42,17 @@
   <button onclick="playAudio('audio5.mp3')">Play Audio 5</button>
 
   <script>
+    let currentAudio = null;
+
     function playAudio(file) {
-      let audio = new Audio(file);
-      audio.play();
+      // Stop currently playing audio if any
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+      // Play new audio
+      currentAudio = new Audio(file);
+      currentAudio.play();
     }
   </script>
 </body>
