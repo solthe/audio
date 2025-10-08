@@ -13,11 +13,19 @@
       height: 100vh;
       background: #f0f0f0;
     }
+
     h1 {
       margin-bottom: 20px;
     }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, auto); /* Two columns */
+      gap: 15px 30px; /* Row and column spacing */
+      justify-content: center;
+    }
+
     button {
-      margin: 10px;
       padding: 15px 30px;
       font-size: 16px;
       cursor: pointer;
@@ -27,6 +35,7 @@
       color: white;
       transition: background 0.2s;
     }
+
     button:hover {
       background: #0056b3;
     }
@@ -35,22 +44,28 @@
 <body>
   <h1>play audio</h1>
 
-  <button onclick="playAudio('audio1.mp3')">Play Audio 1</button>
-  <button onclick="playAudio('audio2.mp3')">Play Audio 2</button>
-  <button onclick="playAudio('audio3.mp3')">Play Audio 3</button>
-  <button onclick="playAudio('audio4.mp3')">Play Audio 4</button>
-  <button onclick="playAudio('audio5.mp3')">Play Audio 5</button>
+  <div class="button-container">
+    <button onclick="playAudio('audio1.mp3')">Play Audio 1</button>
+    <button onclick="playAudio('audio2.mp3')">Play Audio 2</button>
+    <button onclick="playAudio('audio3.mp3')">Play Audio 3</button>
+    <button onclick="playAudio('audio4.mp3')">Play Audio 4</button>
+    <button onclick="playAudio('audio5.mp3')">Play Audio 5</button>
+    <button onclick="playAudio('audio6.mp3')">Play Audio 6</button>
+    <button onclick="playAudio('audio7.mp3')">Play Audio 7</button>
+    <button onclick="playAudio('audio8.mp3')">Play Audio 8</button>
+    <button onclick="playAudio('audio9.mp3')">Play Audio 9</button>
+    <button onclick="playAudio('audio10.mp3')">Play Audio 10</button>
+    <button onclick="playAudio('audio11.mp3')">Play Audio 11</button>
+    <button onclick="playAudio('audio12.mp3')">Play Audio 12</button>
+  </div>
 
   <script>
     let currentAudio = null;
-
     function playAudio(file) {
-      // Stop currently playing audio if any
       if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
       }
-      // Play new audio
       currentAudio = new Audio(file);
       currentAudio.play();
     }
